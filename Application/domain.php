@@ -132,11 +132,13 @@
         <div class="row why">
                 <div class="col">
                 <?php 
+                if(isset($_GET['idom'])){
                   $sqldom1 = "SELECT * FROM domain WHERE id={$_GET['idom']}";
                   $resultdom1 = $conn->query($sqldom1);
                   while($domain1 = $resultdom1->fetch_assoc() ) {?>
                 <h2><?php echo $domain1['name'] ?></h2>
-                <?php }?>
+                
+                  <?php } } ?>
                 <hr class="rounded">
                 </div>
          </div>
@@ -144,6 +146,8 @@
         
 
          <?php 
+
+              if(isset($_GET['idom'])){
              $sqlad = "SELECT announcement.*, domain.name FROM announcement JOIN domain ON announcement.dom_id=domain.id WHERE dom_id={$_GET['idom']}";
              $resultad = $conn->query($sqlad);
 
@@ -163,7 +167,13 @@
                 </div>
                 </a>
 
-             <?php } ?>
+             <?php }
+            
+              } else { ?>
+
+              <p>Priére de choisir un domaine !</p>
+
+              <?php }?>
 
              <center> <a href="addad.php">
     <button type="button" class="btn btn-deep-orange mrg-bot"> <i class="fas fa-plus-square"></i>  Déposer une annonce</button>
@@ -171,12 +181,6 @@
 
 
 </div>
-
-
-
-
-                            
-
 
 
 

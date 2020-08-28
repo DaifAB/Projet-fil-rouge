@@ -69,7 +69,10 @@ if(isset($_SESSION["username"])){
         </span>
     </header>
 
-    <div class="container">
+
+    <p class="mobile mt-2">Le back Office n'est pas disponible pour la version mobile !</p>
+
+    <div class="container area">
         <div class="row mt-5 mb-5 justify-content-center text-center">
             <h1 style="font-size : 70px;" class="font-weight-bold">STATISTIQUES</h1>
         </div>

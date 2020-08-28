@@ -250,7 +250,7 @@ if(!isset($_SESSION["username"])){
                             </div>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="inputGroupFile01" name="photo" aria-describedby="inputGroupFileAddon01" />
-                                <label class="custom-file-label" for="inputGroupFile01">Choisissez votre image</label>
+                                <label class="custom-file-label" for="inputGroupFile01">Image</label>
                             </div>
                             </div>
 
