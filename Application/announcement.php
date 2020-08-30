@@ -257,8 +257,9 @@ if (!isset($_SESSION['recent_post'][$_GET['ad_id']])) {
                     </div>
 
                     <!-- Modal FORM -->
+                            <form action="mail1.php" method="POST">
                             <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                            aria-hidden="true">
+                            aria-hidden="true" action="mail1.php" method="POST">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header text-center">
@@ -270,35 +271,37 @@ if (!isset($_SESSION['recent_post'][$_GET['ad_id']])) {
                                 <div class="modal-body mx-3">
                                     <div class="md-form mb-5">
                                     <i class="fas fa-user prefix grey-text"></i>
-                                    <input type="text" id="form34" class="form-control validate">
+                                    <input type="text" id="form34" class="form-control validate" name="name">
                                     <label data-error="wrong" data-success="right" for="form34">Votre Nom Complet</label>
                                     </div>
 
                                     <div class="md-form mb-5">
                                     <i class="fas fa-envelope prefix grey-text"></i>
-                                    <input type="email" id="form29" class="form-control validate">
+                                    <input type="email" id="form29" class="form-control validate" name="email">
                                     <label data-error="wrong" data-success="right" for="form29">Ton email</label>
                                     </div>
 
                                     <div class="md-form mb-5">
                                     <i class="fas fa-tag prefix grey-text"></i>
-                                    <input type="text" id="form32" class="form-control validate">
+                                    <input type="text" id="form32" class="form-control validate" name="subject">
                                     <label data-error="wrong" data-success="right" for="form32">Sujet</label>
                                     </div>
 
                                     <div class="md-form">
                                     <i class="fas fa-pencil prefix grey-text"></i>
-                                    <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                                    <textarea type="text" id="form8" class="md-textarea form-control" rows="4" name="message"></textarea>
                                     <label data-error="wrong" data-success="right" for="form8">Ton message</label>
                                     </div>
+                                    <input type="hidden" name="recip" class="input" value="<?php echo $user['email']; ?>">
 
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button class="btn btn-unique btn-deep-orange">Envoyer <i class="fas fa-paper-plane-o ml-1"></i></button>
+                                    <button class="btn btn-unique btn-deep-orange" type="submit">Envoyer <i class="fas fa-paper-plane-o ml-1"></i></button>
                                 </div>
                                 </div>
                             </div>
                             </div>
+                            </form>
 
                     <!-- Modal FORM -->
 
